@@ -21,3 +21,4 @@
 [alias]
   co = checkout
   l = "!source ~/.githelpers && pretty_git_log"
+  hp = "!. ~/.githelpers && show_git_head"
