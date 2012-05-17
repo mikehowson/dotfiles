@@ -1,0 +1,23 @@
+[user]
+	name = Mike Howson
+	email = mike.howson@p4innovation.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[alias]
+  co = checkout
+  l = "!source ~/.githelpers && pretty_git_log"
