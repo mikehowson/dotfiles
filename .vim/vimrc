@@ -114,8 +114,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-set backupdir=~/.vim/_backup    " where to put backup files.
-set directory=~/.vim/_temp      " where to put swap files.
+set backupdir=~/.vim/backup    " where to put backup files.
+set directory=~/.vim/tmp      " where to put swap files.
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
