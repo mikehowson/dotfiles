@@ -9,6 +9,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let $JS_CMD='node'
 
 set nocompatible
 syntax enable
@@ -251,3 +252,41 @@ map <leader>a :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 
+call pathogen#infect()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Refactoring functions (Mike H)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Extract global function"
+vmap jem :call ExtractFunction()<CR>
+function! ExtractMethod() range
+  let name = inputdialog("Name of javascript new method:")
+  '<
+  exe "normal! O\<BS>function " . name ."()\<CR>{\<Esc>"
+  '>
+  exe "normal! oreturn ;\<CR>}\<Esc>k"
+  s/return/\/\/ return/ge
+  normal! j%
+  normal! kf(
+  exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
+  normal! ==
+  normal! j0w
+endfunction
+
+"Extract this method"
+vmap jetm :call ExtractThisFunction()<CR>
+function! ExtractThisFunction() range
+  let name = inputdialog("Name of javascript new method:")
+  '<
+  exe "normal! O\<BS>this." . name . " = function()\<CR>{\<Esc>"
+  '>
+  exe "normal! oreturn ;\<CR>}\<Esc>k"
+  s/return/\/\/ return/ge
+  normal! j%
+  normal! kf(
+  exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
+  normal! ==
+  normal! j0w
+endfunction
