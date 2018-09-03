@@ -10,3 +10,5 @@ To install:-
 5. Open vim
 6. Install plugins using Vundle command :PluginInstall
 7. brew install fzf
+8. Go to iTerm->Preferences->Profiles->Colors and choose the solarized
+   dark preset
