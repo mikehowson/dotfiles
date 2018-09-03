@@ -42,6 +42,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'lifepillar/vim-solarized8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -103,10 +104,14 @@ set smartcase                     " ... unless they contain at least one capital
 
 set term=xterm-256color
 set t_Co=256
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 set background=dark
-color railscasts
-colorscheme railscasts
+"color railscasts
+"colorscheme railscasts
+let g:solarized_use16 = 1
+colorscheme solarized8
 
 function s:setupWrapping()
   set wrap
