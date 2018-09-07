@@ -1,6 +1,10 @@
 dotfiles
 ========
 
+Assumptions:-
+
+* Homebrew, iTerm already installed
+
 To install:-
 
 1. Clone the repo to home folder
