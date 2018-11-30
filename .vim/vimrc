@@ -200,6 +200,8 @@ nnoremap <F3> :w\|:call Send_to_Tmux("time rspec -fs ".expand("%")."\n")<CR>
 nnoremap <F4> :w\|:call Send_to_Tmux("time rspec spec/\n")<CR>
 nnoremap <F6> :w\|:call Send_to_Tmux("time cucumber -fpretty -q ".expand("%")."\n")<CR>
 
+nnoremap <silent> <C-p> :FZF<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -222,7 +224,6 @@ map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -344,4 +345,5 @@ function! ExtractThisFunction() range
   normal! ==
   normal! j0w
 endfunction
+
 
