@@ -138,8 +138,6 @@ if has("autocmd")
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 
-  au VimEnter * NERDTree
-  au VimEnter * NERDTree
   au VimEnter * wincmd p
 endif
 
@@ -353,4 +351,5 @@ function! ExtractThisFunction() range
   normal! j0w
 endfunction
 
-map ; :Files<CR>
+map ff :Files<CR>
+map nt :NERDTree<CR>

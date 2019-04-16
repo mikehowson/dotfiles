@@ -1,5 +1,4 @@
-dotfiles
-========
+### dotfiles
 
 Assumptions:-
 
@@ -16,3 +15,8 @@ To install:-
 7. brew install fzf
 8. Go to iTerm->Preferences->Profiles->Colors and choose the solarized
    dark preset
+
+### Custom Shortcuts
+
+nt = NERDTree
+ff  = Fuzzy file find
