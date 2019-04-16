@@ -149,6 +149,8 @@ set scrolloff=3
 " don't use Ex mode, use Q for formatting
 map Q gq
 
+
+
 let mapleader=","
 
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
@@ -351,4 +353,4 @@ function! ExtractThisFunction() range
   normal! j0w
 endfunction
 
-
+map ; :Files<CR>
