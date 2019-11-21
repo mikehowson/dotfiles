@@ -206,6 +206,7 @@ nnoremap <F4> :w\|:call Send_to_Tmux("time rspec spec/\n")<CR>
 nnoremap <F6> :w\|:call Send_to_Tmux("time cucumber -fpretty -q ".expand("%")."\n")<CR>
 
 nnoremap <silent> <C-p> :FZF<CR>
+imap § <Esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
@@ -351,5 +352,5 @@ function! ExtractThisFunction() range
   normal! j0w
 endfunction
 
-map ff :Files<CR>
+map ff :GFiles<CR>
 map nt :NERDTree<CR>

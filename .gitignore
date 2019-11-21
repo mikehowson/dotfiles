@@ -1,4 +1,6 @@
 .vim/.netrwhist
+.vim/tmp/
+/vim/bundle
 .fontconfig/
 .gdb_history
 .gem/
