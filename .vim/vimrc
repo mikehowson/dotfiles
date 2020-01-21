@@ -12,6 +12,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -44,10 +45,23 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'pangloss/vim-javascript'
+Plugin 'Valloric/YouCompleteMe' ", { 'do': './install.py --ts-completer' }
+"Plugin 'prabirshrestha/asyncomplete.vim'
+"Plugin 'apalmer1377/factorus'
+"Plugin 'marijnh/tern_for_vim', { 'do' : 'npm install'} "run npm install from folder ~/dotfiles/.vim/bundle/tern_for_vim after PluginInstall
+"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+"Plugin 'https://github.com/ycm-core/YouCompleteMe'
+
+"Add new entry above and then Run :PluginInstall to install"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+set omnifunc=syntaxcomplete#Complete
+
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys=1
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -208,6 +222,7 @@ nnoremap <F6> :w\|:call Send_to_Tmux("time cucumber -fpretty -q ".expand("%")."\
 nnoremap <silent> <C-p> :FZF<CR>
 imap § <Esc>
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -354,3 +369,6 @@ endfunction
 
 map ff :GFiles<CR>
 map nt :NERDTree<CR>
+map gr :YcmCompleter GoToReferences<CR>
+map rr :YcmCompleter RefactorRename 
+map rf :YcmCompleter Format<CR>
